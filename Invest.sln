@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invest.Domain", "Domain\Invest.Domain.csproj", "{261FB9B3-DE0D-42C7-BABF-95E4BFAF0F76}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invest.Domain", "Invest.Domain\Invest.Domain.csproj", "{261FB9B3-DE0D-42C7-BABF-95E4BFAF0F76}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Invest.Application", "Invest.Application\Invest.Application.csproj", "{E489227E-889A-417F-A03D-E4E697FC986D}"
 EndProject
