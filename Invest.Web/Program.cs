@@ -1,10 +1,24 @@
+using Invest.Infrastructure;
+using Invest.Infrastructure.Configuration;
 using Invest.Web.Components;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.Configure<Database>(
+    builder.Configuration.GetSection("Database"));
+
+builder.Services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
+{
+    var dbSettings = serviceProvider.GetRequiredService<IOptions<Database>>().Value;
+    options.UseNpgsql(dbSettings.GetConnectionString);
+
+});
 
 var app = builder.Build();
 
