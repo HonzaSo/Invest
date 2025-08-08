@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace Domain
+namespace Invest.Infrastructure.DataAccess.Entity
 {
     public class FinancialProduct
     {
@@ -20,6 +20,6 @@ namespace Domain
 
         public double Close { get; set; }
 
-        public Int64 Volume { get; set; }
+        public long Volume { get; set; }
     }
 }

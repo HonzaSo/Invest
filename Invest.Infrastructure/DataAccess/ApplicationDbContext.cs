@@ -1,7 +1,7 @@
-﻿using Domain;
+﻿using Invest.Infrastructure.DataAccess.Entity;
 using Microsoft.EntityFrameworkCore;
 
-namespace Invest.Infrastructure
+namespace Invest.Infrastructure.DataAccess
 {
     public class ApplicationDbContext :DbContext
     {

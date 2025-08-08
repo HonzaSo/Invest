@@ -23,4 +23,9 @@
     <ProjectReference Include="..\Invest.Application\Invest.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="ExternalApis\" />
+    <Folder Include="Services\" />
+  </ItemGroup>
+
 </Project>
