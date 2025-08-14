@@ -1,4 +1,4 @@
-﻿namespace Invest.Infrastructure.Configuration
+﻿namespace Invest.Infrastructure.Configurations
 {
     public class Database
     {

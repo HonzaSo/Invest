@@ -1,5 +1,5 @@
-using Invest.Infrastructure;
-using Invest.Infrastructure.Configuration;
+using Invest.Infrastructure.Configurations;
+using Invest.Infrastructure.DataAccess;
 using Invest.Web.Components;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
@@ -16,8 +16,11 @@ builder.Services.Configure<Database>(
 builder.Services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =>
 {
     var dbSettings = serviceProvider.GetRequiredService<IOptions<Database>>().Value;
-    options.UseNpgsql(dbSettings.GetConnectionString);
-
+    options.UseNpgsql(dbSettings.GetConnectionString, x =>
+    {
+        x.MigrationsAssembly("Invest.Infrastructure");
+        x.MigrationsHistoryTable("invest_migrations_history", "DataAccess");
+    });
 });
 
 var app = builder.Build();
