@@ -10,15 +10,16 @@ namespace Invest.Infrastructure.DataAccess
         {
         }
 
+        public DbSet<User> Users { get; set; }
+        public DbSet<UserAccount> UserAccounts { get; set; }
         public DbSet<FinancialProduct> FinancialProducts { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<FinancialProduct>().HasData(
-                new FinancialProduct { Id = 1, Symbol = "T", From = "2023-09-01", Open = 153.775, High = 154.33, Low = 150.42, Close = 150.87, Volume = 123456 },
-                new FinancialProduct { Id = 2, Symbol = "E", From = "2023-09-01", Open = 153.775, High = 154.33, Low = 150.42, Close = 150.87, Volume = 123456 },
-                new FinancialProduct { Id = 3, Symbol = "S", From = "2023-09-01", Open = 153.775, High = 154.33, Low = 150.42, Close = 150.87, Volume = 123456 }
-                );
+            modelBuilder.Entity<User>().Property(u => u.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<FinancialProduct>().Property(fp => fp.Id).ValueGeneratedOnAdd();
+            modelBuilder.Entity<UserAccount>().Property(ua => ua.Id).ValueGeneratedOnAdd();
         }
+
 
     }
 }
