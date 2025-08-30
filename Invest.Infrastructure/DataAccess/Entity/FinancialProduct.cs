@@ -2,9 +2,8 @@
 
 namespace Invest.Infrastructure.DataAccess.Entity
 {
-    public class FinancialProduct
+    public class FinancialProduct: EntityBase
     {
-        public Guid Id { get; set; }
         public required string Symbol { get; set; }
         public required string From { get; set; }
 

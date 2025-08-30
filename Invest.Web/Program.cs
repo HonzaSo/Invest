@@ -3,12 +3,15 @@ using Invest.Infrastructure.DataAccess;
 using Invest.Web.Components;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
+using Invest.Web;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
+
+builder.Services.AddApplicationServices();
 
 builder.Services.Configure<Database>(
     builder.Configuration.GetSection("Database"));
@@ -22,6 +25,7 @@ builder.Services.AddDbContext<ApplicationDbContext>((serviceProvider, options) =
         x.MigrationsHistoryTable("invest_migrations_history", "DataAccess");
     });
 });
+
 
 var app = builder.Build();
 
