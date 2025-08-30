@@ -2,10 +2,8 @@
 
 namespace Invest.Infrastructure.DataAccess.Entity
 {
-    public class FinancialProduct
+    public class FinancialProduct: EntityBase
     {
-        [Key]
-        public int Id { get; set; }
         [Required(ErrorMessage = "Symbol produktu je vyzadovan.")]
         public required string Symbol { get; set; }
         [Required(ErrorMessage = "Datum je povinny.")]
