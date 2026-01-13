@@ -2,10 +2,9 @@
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddApplicationServices(this IServiceCollection services)
+        public static void AddWebServices(this IHostApplicationBuilder builder)
         {
-
-            return services;
+            
         }
     }
 }

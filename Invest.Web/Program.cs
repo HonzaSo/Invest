@@ -1,3 +1,5 @@
+using Invest.Application;
+using Invest.Infrastructure;
 using Invest.Infrastructure.Configurations;
 using Invest.Infrastructure.DataAccess;
 using Invest.Web.Components;
@@ -11,7 +13,9 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddRazorComponents()
     .AddInteractiveServerComponents();
 
-builder.Services.AddApplicationServices();
+builder.AddApplicationServices();
+builder.AddInfrastructureServices();
+builder.AddWebServices();
 
 builder.Services.Configure<Database>(
     builder.Configuration.GetSection("Database"));
